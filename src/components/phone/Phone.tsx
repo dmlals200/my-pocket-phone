@@ -75,8 +75,7 @@ function LockScreen({ onUnlock }: { onUnlock: () => void }) {
     <div className="absolute inset-0 flex flex-col items-center text-[var(--paper)]" style={bg}>
       <div className="glass absolute inset-0" />
       <div className="relative mt-24 text-lg">암호 입력</div>
-      <div className="relative mt-1 text-xs opacity-80">힌트: {character.passcode}</div>
-      <div className={`relative mt-5 flex gap-5 ${err ? "shake" : ""}`}>
+      <div className={`relative mt-12 flex gap-5 ${err ? "shake" : ""}`}>
         {Array.from({ length: len }).map((_, i) => (
           <span key={i} className={`h-3.5 w-3.5 rounded-full border-2 border-[var(--paper)] ${i < code.length ? "bg-[var(--paper)]" : ""}`} />
         ))}
