@@ -6,6 +6,7 @@ import {
 import {
   character, photos, messageThreads, kakaoChats, notes as initialNotes, songs, contacts, bstagePosts, type Thread,
 } from "@/data/character";
+import kakaoIcon from "@/assets/kakao-icon.svg.asset.json";
 
 export type AppId = "messages" | "photos" | "notes" | "music" | "bstage" | "camera" | "kakao" | "phone";
 type Props = { onExit: () => void; backSignal: number };
@@ -384,6 +385,6 @@ export const APPS: { id: AppId; name: string; cls: string; icon: ReactNode; ligh
   { id: "music", name: "음악", cls: "ic-music", icon: <Music size={30} className={W} />, lightUi: false, Component: MusicApp },
   { id: "bstage", name: "b.stage", cls: "ic-bstage", icon: <span className={`${W} text-lg font-black`}>b.</span>, lightUi: false, Component: BstageApp },
   { id: "camera", name: "카메라", cls: "ic-camera", icon: <Camera size={30} className="text-[var(--ink)]" />, lightUi: false, Component: CameraApp },
-  { id: "kakao", name: "카카오톡", cls: "ic-kakao", icon: <span className="rounded-full bg-[var(--ink)] px-2 py-0.5 text-[10px] font-black text-[var(--kakao)]">TALK</span>, lightUi: true, Component: KakaoApp },
+  { id: "kakao", name: "카카오톡", cls: "ic-kakao", icon: <img src={kakaoIcon.url} alt="카카오톡" className="h-full w-full object-cover" />, lightUi: true, Component: KakaoApp },
   { id: "phone", name: "전화", cls: "ic-phone", icon: <PhoneIcon size={30} className={`${W} fill-current`} />, lightUi: true, Component: PhoneApp },
 ];
