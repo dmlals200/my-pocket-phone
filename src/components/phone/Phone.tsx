@@ -109,7 +109,7 @@ function Home({ open }: { open: (id: AppId) => void }) {
       <div className="mt-6 grid grid-cols-4 gap-y-6 px-6">
         {main.map((a) => (
           <button key={a.id} onClick={() => open(a.id)} className="flex flex-col items-center gap-1.5 active:scale-90 transition">
-            <span className={`${a.cls} flex h-[60px] w-[60px] items-center justify-center rounded-[16px] shadow-lg`}>{a.icon}</span>
+            <span className={`${a.cls} flex h-[60px] w-[60px] items-center justify-center overflow-hidden rounded-[16px] shadow-lg`}>{a.icon}</span>
             <span className="text-[11px] text-[var(--paper)] drop-shadow">{a.name}</span>
           </button>
         ))}
@@ -118,7 +118,7 @@ function Home({ open }: { open: (id: AppId) => void }) {
         {dock.map((id) => {
           const a = APPS.find((x) => x.id === id)!;
           return (
-            <button key={id} onClick={() => open(id)} className={`${a.cls} flex h-[60px] w-[60px] items-center justify-center rounded-[16px] active:scale-90 transition`}>{a.icon}</button>
+            <button key={id} onClick={() => open(id)} className={`${a.cls} flex h-[60px] w-[60px] items-center justify-center overflow-hidden rounded-[16px] active:scale-90 transition`}>{a.icon}</button>
           );
         })}
       </div>
