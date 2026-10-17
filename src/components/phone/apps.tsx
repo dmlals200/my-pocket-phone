@@ -378,13 +378,13 @@ function PhoneApp({ onExit, backSignal }: Props) {
 }
 
 const W = "text-[var(--paper)]";
-export const APPS: { id: AppId; name: string; cls: string; icon: ReactNode; lightUi: boolean; Component: (p: Props) => ReactNode }[] = [
+export const APPS: { id: AppId; name: string; cls: string; icon: ReactNode; lightUi: boolean; Component: (p: Props) => ReactNode; tile?: string }[] = [
   { id: "messages", name: "메시지", cls: "ic-messages", icon: <MessageCircle size={32} className={`${W} fill-current`} />, lightUi: true, Component: MessagesApp },
   { id: "photos", name: "사진", cls: "ic-photos", icon: <ImageIcon size={30} className={W} />, lightUi: true, Component: PhotosApp },
   { id: "notes", name: "메모", cls: "ic-notes", icon: <StickyNote size={28} className="text-[var(--ios-text2)]" />, lightUi: true, Component: NotesApp },
   { id: "music", name: "음악", cls: "ic-music", icon: <Music size={30} className={W} />, lightUi: false, Component: MusicApp },
   { id: "bstage", name: "b.stage", cls: "ic-bstage", icon: <span className={`${W} text-lg font-black`}>b.</span>, lightUi: false, Component: BstageApp },
   { id: "camera", name: "카메라", cls: "ic-camera", icon: <Camera size={30} className="text-[var(--ink)]" />, lightUi: false, Component: CameraApp },
-  { id: "kakao", name: "카카오톡", cls: "ic-kakao", icon: <img src={kakaoIcon.url} alt="카카오톡" className="h-full w-full object-cover" />, lightUi: true, Component: KakaoApp },
+  { id: "kakao", name: "카카오톡", cls: "ic-kakao", tile: "h-[54px] w-[54px]", icon: <img src={kakaoIcon.url} alt="카카오톡" className="h-full w-full object-cover" />, lightUi: true, Component: KakaoApp },
   { id: "phone", name: "전화", cls: "ic-phone", icon: <PhoneIcon size={30} className={`${W} fill-current`} />, lightUi: true, Component: PhoneApp },
 ];
