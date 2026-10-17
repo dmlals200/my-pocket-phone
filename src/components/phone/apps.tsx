@@ -70,7 +70,7 @@ function useThreads(initial: Thread[]) {
   const send = (id: string, text: string) => {
     setThreads((ts) => ts.map((t) => (t.id === id ? { ...t, messages: [...t.messages, { from: "me", text }] } : t)));
     const replies = ["ㅎㅎ 그렇구나!", "알겠어 😊", "진짜?", "좋아 좋아!", "나중에 얘기하자~"];
-    setTimeout(() => setThreads((ts) => ts.map((t) => (t.id === id ? { ...t, messages: [...t.messages, { from: "them", text: replies[Math.floor(Math.random() * replies.length)] }] } : t))), 1200);
+    setTimeout(() => setThreads((ts) => ts.map((t) => (t.id === id ? { ...t, messages: [...t.messages, { from: "them", text: replies[Math.floor(Math.random() * replies.length)]! }] } : t))), 1200);
   };
   const create = (name: string) => {
     const id = `t${Date.now()}`;
