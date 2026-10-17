@@ -12,9 +12,10 @@ type Props = { onExit: () => void; backSignal: number };
 
 /** 뒤로 버튼: 하위 화면이면 한 단계 뒤로, 아니면 홈으로 */
 function useBack(backSignal: number, canPop: boolean, pop: () => void, onExit: () => void) {
-  const first = useRef(true);
+  const last = useRef(backSignal);
   useEffect(() => {
-    if (first.current) { first.current = false; return; }
+    if (last.current === backSignal) return;
+    last.current = backSignal;
     if (canPop) pop(); else onExit();
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [backSignal]);
