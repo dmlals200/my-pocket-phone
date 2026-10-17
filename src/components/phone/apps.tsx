@@ -157,7 +157,7 @@ function PhotosApp({ onExit, backSignal }: Props) {
   const [idx, setIdx] = useState<number | null>(null);
   useBack(backSignal, idx !== null, () => setIdx(null), onExit);
   if (idx !== null) {
-    const p = photos[idx];
+    const p = photos[idx]!;
     return (
       <div className="flex h-full flex-col bg-[var(--ink)] text-[var(--paper)]">
         <div className="flex items-center justify-between px-3 pt-12">
@@ -224,7 +224,7 @@ function MusicApp({ onExit, backSignal }: Props) {
   const [pos, setPos] = useState(0);
   const [liked, setLiked] = useState(false);
   useBack(backSignal, false, () => {}, onExit);
-  const s = songs[i];
+  const s = songs[i]!;
   useEffect(() => {
     if (!playing) return;
     const t = setInterval(() => setPos((p) => (p + 1 >= s.duration ? (setI((x) => (x + 1) % songs.length), 0) : p + 1)), 1000);
