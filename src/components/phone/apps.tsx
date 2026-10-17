@@ -40,7 +40,7 @@ function Header({ title, onBack, backLabel = "", right, large }: { title: string
 function ChatView({ thread, kakao, onSend }: { thread: Thread; kakao?: boolean; onSend: (t: string) => void }) {
   const [text, setText] = useState("");
   const end = useRef<HTMLDivElement>(null);
-  useEffect(() => end.current?.scrollIntoView({ behavior: "smooth" }), [thread.messages.length]);
+  useEffect(() => { end.current?.scrollIntoView({ behavior: "smooth" }); }, [thread.messages.length]);
   const send = () => { if (text.trim()) { onSend(text.trim()); setText(""); } };
   return (
     <>
