@@ -142,3 +142,38 @@
     color: var(--color-foreground);
   }
 }
+
+/* ===== Virtual phone ===== */
+:root {
+  --stage: oklch(0.2 0.02 300);
+  --ios-blue: oklch(0.6 0.2 255);
+  --ios-green: oklch(0.72 0.19 150);
+  --ios-red: oklch(0.63 0.23 27);
+  --ios-gray: oklch(0.95 0.003 260);
+  --ios-gray2: oklch(0.88 0.005 260);
+  --ios-text2: oklch(0.55 0.01 260);
+  --kakao: oklch(0.88 0.18 98);
+  --kakao-bg: oklch(0.78 0.04 240);
+  --glass: oklch(1 0 0 / 0.22);
+  --ink: oklch(0.15 0 0);
+  --paper: oklch(1 0 0);
+}
+body { font-family: "Pretendard Variable", Pretendard, -apple-system, system-ui, sans-serif; background: var(--stage); }
+.stage { background: radial-gradient(circle at 30% 20%, oklch(0.35 0.08 330), var(--stage) 70%); }
+.phone-frame { box-shadow: 0 0 0 11px oklch(0.12 0 0), 0 0 0 13px oklch(0.35 0 0), 0 40px 80px -20px oklch(0 0 0 / 0.7); }
+.glass { background: var(--glass); backdrop-filter: blur(24px) saturate(1.6); -webkit-backdrop-filter: blur(24px) saturate(1.6); }
+.key { background: oklch(1 0 0 / 0.18); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); }
+.key:active { background: oklch(1 0 0 / 0.5); }
+.ic-messages { background: linear-gradient(180deg, oklch(0.8 0.2 145), oklch(0.68 0.2 148)); }
+.ic-photos { background: conic-gradient(oklch(0.75 0.18 30), oklch(0.85 0.17 90), oklch(0.75 0.18 150), oklch(0.65 0.15 250), oklch(0.65 0.2 320), oklch(0.75 0.18 30)); }
+.ic-notes { background: linear-gradient(180deg, oklch(0.9 0.15 95) 30%, oklch(0.98 0 0) 30%); }
+.ic-music { background: linear-gradient(180deg, oklch(0.7 0.22 15), oklch(0.6 0.24 10)); }
+.ic-bstage { background: linear-gradient(135deg, oklch(0.25 0.03 280), oklch(0.12 0 0)); }
+.ic-camera { background: linear-gradient(180deg, oklch(0.88 0 0), oklch(0.7 0 0)); }
+.ic-kakao { background: var(--kakao); }
+.ic-phone { background: linear-gradient(180deg, oklch(0.8 0.2 145), oklch(0.68 0.2 148)); }
+.app-in { animation: appIn .32s cubic-bezier(.2,.8,.2,1); }
+@keyframes appIn { from { transform: scale(.85); opacity: 0; border-radius: 40px; } to { transform: scale(1); opacity: 1; } }
+.shake { animation: shake .4s; }
+@keyframes shake { 20%,60% { transform: translateX(-10px); } 40%,80% { transform: translateX(10px); } }
+.no-scrollbar::-webkit-scrollbar { display: none; }
