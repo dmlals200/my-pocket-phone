@@ -137,7 +137,7 @@ export function Phone() {
 
   return (
     <main className="stage flex min-h-[100dvh] items-center justify-center sm:p-8">
-      <div className="phone-frame-wrap relative h-[100dvh] w-full overflow-hidden bg-[var(--ink)] sm:phone-frame sm:h-[844px] sm:max-h-[92vh] sm:w-[390px] sm:rounded-[54px]">
+      <div className="phone-frame-wrap relative h-[100dvh] w-full overflow-hidden bg-[var(--ink)] sm:h-[844px] sm:max-h-[92vh] sm:w-[390px] sm:rounded-[54px]">
         <StatusBar dark={!locked && darkBar} />
         {locked ? (
           <LockScreen onUnlock={() => setLocked(false)} />
