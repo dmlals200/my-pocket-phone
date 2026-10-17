@@ -13,7 +13,7 @@ export const character = {
   status: "오늘도 반짝반짝 ✨",
   avatar: profile,
   wallpaper,
-  passcode: "0101", // 잠금 비밀번호 (4자리)
+  passcode: "0206", // 잠금 비밀번호 (4자리)
 };
 
 export const photos: { src: string; caption: string; date: string }[] = [
